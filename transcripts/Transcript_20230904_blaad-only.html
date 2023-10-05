@@ -1,0 +1,296 @@
+<html>
+<head><style type="text/css">
+
+    @font-face {
+      font-family: Whitney;
+      src: url("https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff");
+      font-weight: 300;
+    }
+  
+    @font-face {
+      font-family: Whitney;
+      src: url("https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff");
+      font-weight: 400;
+    }
+  
+    @font-face {
+      font-family: Whitney;
+      src: url("https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff");
+      font-weight: 500;
+    }
+  
+    @font-face {
+      font-family: Whitney;
+      src: url("https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff");
+      font-weight: 600;
+    }
+  
+    @font-face {
+      font-family: Whitney;
+      src: url("https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff");
+      font-weight: 700;
+    }
+  
+    * {
+      scrollbar-color: #454a4d #202324;
+    }
+  
+    body {
+      background-color: #2c2f31;
+      color: rgb(211, 207, 201);
+      font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      margin: 0;
+      padding: 5px;
+    }
+  
+    .attach {
+      max-width: 150px;
+      height: auto;
+    }
+  
+    .message-container {
+      display: flex;
+      flex-direction: column;
+      padding-left: 15px;
+    }
+  
+    .parent-container {
+      padding: 25px;
+      display: flex;
+      border-bottom: 1px solid;
+      margin-bottom: -1px;
+      border-bottom-width: thin;
+      border-color: #a8a8a8;
+    }
+  
+    .avatar {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    }
+  
+    span {
+      color: #ffffff;
+      font-weight: 500;
+    }
+  
+    span1 {
+      color: #c2c2c2;
+      margin-left: 0.3em;
+      font-size: 0.75em;
+      color: rgba(255, 255, 255, 0.2);
+    }
+  
+    message {
+      font-size: 0.95em;
+    }
+  
+    guild {
+      font-size: 35;
+    }
+  
+    mention {
+      border-radius: 3px;
+      padding: 0 2px;
+      color: #7289da;
+      background: rgba(114, 137, 218, 0.1);
+      font-weight: 500;
+    }
+  
+    file {
+      border-radius: 2px;
+      background: #36393e;
+      padding-top: 20px;
+      padding-right: 10px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+    }
+  
+    a.patreon-link {
+      display: -webkit-box;
+      display: flex;
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+      z-index: 10;
+      text-decoration: none;
+    }
+  
+    .badge-container {
+      width: 100%;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      padding: 5px 10px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      text-align: center;
+    }
+  
+    .badge-container .badge-icon {
+      background: url("https://s3.amazonaws.com/patreon_public_assets/toolbox/patreon_white.png") center center no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 20px;
+    }
+  
+    .badge-container .badge-text {
+      font-family: "Lato", sans-serif;
+      font-size: 12px;
+      padding: 2px;
+      color: #fff;
+    }
+  
+    .badge-container .badge-text.badge-text-bottom {
+      position: relative;
+      top: -2px;
+    }
+  
+    .preview {
+      background: #36393e;
+      display: -webkit-box;
+      display: flex;
+      box-orient: vertical;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+    }
+  
+    .wrapper {
+      display: -webkit-box;
+      display: flex;
+      max-width: 520px;
+    }
+  
+    .container {
+      margin-top: 50px;
+    }
+  
+    .side-colored {
+      width: 4px;
+      border-radius: 3px 0 0 3px;
+      background: #4f545c;
+    }
+  
+    .embed {
+      border-radius: 0 3px 3px 0;
+      background: rgba(46, 48, 54, 0.3);
+      border-color: rgba(46, 48, 54, 0.6);
+      display: -webkit-box;
+      display: flex;
+      padding: 8px 10px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+    }
+  
+    .embed .card-block {
+      padding: 0;
+      display: -webkit-box;
+      display: flex;
+      margin-bottom: 10px;
+    }
+  
+    .embed a {
+      color: #0096cf;
+    }
+  
+    .embed img.embed-thumb {
+      max-height: 80px;
+      max-width: 80px;
+      border-radius: 3px;
+      flex-shrink: 0;
+      width: auto;
+      -o-object-fit: contain;
+      object-fit: contain;
+      margin-left: 20px;
+    }
+  
+    .embed .embed-footer {
+      font-size: 12px;
+    }
+  
+    .embed .embed-footer span {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  
+    .embed .embed-inner .embed-title {
+      color: #fff;
+    }
+  
+    .embed .embed-inner .embed-author {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+  
+    .embed .embed-inner .embed-author img.embed-author-icon {
+      margin-right: 9px;
+      width: 20px;
+      height: 20px;
+      -o-object-fit: contain;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+  
+    .embed .embed-inner .embed-author .embed-author-name {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff !important;
+    }
+  
+    .embed .embed-inner .fields {
+      display: -webkit-box;
+      display: flex;
+      flex-wrap: wrap;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      flex-direction: row;
+      box-lines: miltiple;
+      margin-top: -10px;
+    }
+  
+    .embed .embed-inner .fields .field {
+      -webkit-box-flex: 0;
+      flex: 0;
+      box-flex: 1;
+      padding-top: 10px;
+      max-width: 506px;
+      min-width: 100%;
+    }
+  
+    .embed .embed-inner .fields .field.inline {
+      box-flex: 1;
+      -webkit-box-flex: 1;
+      flex: 1;
+      min-width: 150px;
+      flex-basis: auto;
+    }
+  
+    .embed .embed-inner .fields .field .field-name {
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+  
+    .embed .embed-inner .fields .field .field-value {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.1em;
+      white-space: pre-wrap;
+      margin-top: 6px;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+    <div class="d-flex flex-row p-2">
+        <img src="https://i.imgur.com/Q7lmWhy.png" width="150">
+        <p class="fs-3 fw-light p-2 text-white"><br><font size = "6">Department of Public Safety [866414500323131392]</font><br><font size = "5">INVESTIGATIONS DIRECTORY / blaad-only [1059539604044259415]</font><br><font size = "3">TOTAL MESSAGES: 16</font></p></div><hr><body><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Tue Jan 03 2023 16:05:39 GMT+0000 (Greenwich Mean Time)</span></span><message><@277792802924920842> r u proud of me so far<br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Tue Jan 03 2023 16:39:21 GMT+0000 (Greenwich Mean Time)</span></span><message>``https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048``<br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Tue Jan 03 2023 16:49:05 GMT+0000 (Greenwich Mean Time)</span></span><message>AYYY<br><img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/1059539604044259415/1059876063964041276/image.png?ex=652ebb01&is=651c4601&hm=9300588b0e9d1015c4d7c51335abde5a9a18fee6610e802cfaf8abb01af27529& width: 600px height: auto alt="Attachment" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/attachments/1059539604044259415/1059876063964041276/image.png?ex=652ebb01&is=651c4601&hm=9300588b0e9d1015c4d7c51335abde5a9a18fee6610e802cfaf8abb01af27529&';"></br><br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Tue Jan 03 2023 17:02:06 GMT+0000 (Greenwich Mean Time)</span></span><message>nooo<br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Tue Jan 03 2023 17:07:47 GMT+0000 (Greenwich Mean Time)</span></span><message>https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048<br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Tue Jan 03 2023 17:08:02 GMT+0000 (Greenwich Mean Time)</span></span><message><br><img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/1059539604044259415/1059880834137591900/unknown.png?ex=652ebf72&is=651c4a72&hm=23f2bbac8273b55678cccf5b25e0db3d9da7d0c57270e836b1580e4b209810dc& width: 600px height: auto alt="Attachment" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/attachments/1059539604044259415/1059880834137591900/unknown.png?ex=652ebf72&is=651c4a72&hm=23f2bbac8273b55678cccf5b25e0db3d9da7d0c57270e836b1580e4b209810dc&';"></br><br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Tue Jan 03 2023 17:08:36 GMT+0000 (Greenwich Mean Time)</span></span><message>what if i like no serious cash<br><img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/1059539604044259415/1059880974818754690/unknown.png?ex=652ebf94&is=651c4a94&hm=dc9afc8a8c0b5b4ead3e14781119a4fd33153a36035a412ba0d5cd671efae5c6& width: 600px height: auto alt="Attachment" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/attachments/1059539604044259415/1059880974818754690/unknown.png?ex=652ebf94&is=651c4a94&hm=dc9afc8a8c0b5b4ead3e14781119a4fd33153a36035a412ba0d5cd671efae5c6&';"></br><br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Tue Jan 03 2023 19:24:28 GMT+0000 (Greenwich Mean Time)</span></span><message>help<br>i<br>Like<br>chocolate<br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/277792802924920842/dd34b191637b3d2090e96198f868371a.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>cossie [@277792802924920842]<span class="chatlog__timestamp">   Sat Jan 07 2023 18:25:31 GMT+0000 (Greenwich Mean Time)</span></span><message>i love how blaad only this chat it<br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Sat Jan 07 2023 18:25:39 GMT+0000 (Greenwich Mean Time)</span></span><message>lol<br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Sun Jan 08 2023 15:08:06 GMT+0000 (Greenwich Mean Time)</span></span><message><br><img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/1059539604044259415/1061662593380536380/image.png?ex=652c0056&is=65198b56&hm=843e3f4baef33277a2dbdcf9e1e92ec58c72a5ab3e2a6d4fc675f894e2b8a621& width: 600px height: auto alt="Attachment" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/attachments/1059539604044259415/1061662593380536380/image.png?ex=652c0056&is=65198b56&hm=843e3f4baef33277a2dbdcf9e1e92ec58c72a5ab3e2a6d4fc675f894e2b8a621&';"></br><br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Fri Jan 20 2023 19:43:08 GMT+0000 (Greenwich Mean Time)</span></span><message>OWO1<br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Thu Mar 16 2023 12:14:14 GMT+0000 (Greenwich Mean Time)</span></span><message>i like spaghetti and cheese <br>(dis a test)<br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Thu Mar 23 2023 18:04:55 GMT+0000 (Greenwich Mean Time)</span></span><message>https://discord.com/api/oauth2/authorize?client_id=123456789012345678&permissions=0&scope=bot%20applications.commands<br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Thu Mar 23 2023 18:04:59 GMT+0000 (Greenwich Mean Time)</span></span><message><br><br></br></message></div></div><div class="parent-container"> <div class="avatar-container"><img src=https://cdn.discordapp.com/avatars/251442524516909058/7e5d87a4cd4744b6e47d033082ae119b.webp?size=2048 class="avatar"></img></div><div class="message-container"><span>blaadam [@251442524516909058]<span class="chatlog__timestamp">   Sat Jul 15 2023 16:43:34 GMT+0100 (British Summer Time)</span></span><message><br><img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/1059539604044259415/1129800434115162162/image.png?ex=652ab726&is=65184226&hm=f4f57aa3df71df8324b2c81e30d0fa7159659ae7307443819e6980b28f328c46& width: 600px height: auto alt="Attachment" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/attachments/1059539604044259415/1129800434115162162/image.png?ex=652ab726&is=65184226&hm=f4f57aa3df71df8324b2c81e30d0fa7159659ae7307443819e6980b28f328c46&';"></br><br><br></br></message></div></div></body></html>
