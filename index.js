@@ -1,5 +1,5 @@
 let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 function addData(data) {
     var newRow = document.createElement("tr");
@@ -61,14 +61,15 @@ function httpGet(theUrl) {
 }
 
 function nameToDate(stringDate) {
-    var stringYear = stringDate.substring(0, 3)
-    var stringMonth = stringDate.substring(4, 5)
-    var stringDay = stringDate.substring(6, 7)
-
+    var stringYear = stringDate.substring(0, 4)
+    var stringMonth = stringDate.substring(4, 6)
+    var stringDay = stringDate.substring(6, 8)
+    console.log(stringYear, stringMonth, stringDay)
     let date = new Date(stringYear, stringMonth, stringDay);
     let year = date.getFullYear();
     let month = date.getMonth();
     let day = date.getDay();
+    console.log(day+1)
 
     return converted_date = `${days[day]} ${day} ${months[month]}  ${year}`;
 }
