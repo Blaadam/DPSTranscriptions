@@ -6,7 +6,7 @@ function addData(data) {
 
     var docName = document.createElement("td");
     var docDate = document.createElement("td");
-    //var docCreator = document.createElement("td");
+    
     var docButton_Holder = document.createElement("td");
     var docButton = document.createElement("button")
 
@@ -14,7 +14,6 @@ function addData(data) {
 
     docName.innerText = data.docName
     docDate.innerText = data.docDate
-    //  .innerText = data.docCreator
 
     docButton.className = "btn btn-primary"
     docButton.style = "background: rgb(50,147,89);"
@@ -43,10 +42,9 @@ function addData(data) {
 
     docPreviewButton_Holder.append(docPreviewButton)
     ////////////////////////////////////////////////
-
     newRow.append(docName);
     newRow.append(docDate);
-    //newRow.append(docCreator);
+
     newRow.append(docPreviewButton_Holder);
     newRow.append(docButton_Holder);
 
@@ -55,7 +53,7 @@ function addData(data) {
 
 function httpGet(theUrl) {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", theUrl, false); // false for synchronous request
+    xmlHttp.open("GET", theUrl, false);
     xmlHttp.send(null);
     return xmlHttp.responseText;
 }
@@ -75,7 +73,6 @@ function nameToDate(stringDate) {
 
 window.onload = function () {
     const results = JSON.parse(httpGet("https://api.github.com/repos/Blaadam/DPSTranscriptions/contents/transcripts"))
-    //console.log(results)
 
     var newEntry
 
